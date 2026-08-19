@@ -1,19 +1,17 @@
 <?php
 
-require_once "Funcionario.php";
+class Conversor {
+    public static function dolarParaReal($valor) {
+        return $valor * 5.00;
+    }
+}
 
-$func = new Funcionario();
+// Opção A
+$v1 = new Conversor();
+echo $v1->dolarParaReal(10);
 
-$func->setNome("");
-$func->setIdade(-10);
-$func->setSalario(0);
+// Opção B
+echo Conversor::dolarParaReal(10);
 
-echo "<hr>";
 
-$func->setNome("Ana");
-$func->setIdade(25);
-$func->setSalario(3000);
-
-echo "Cadastro realizado com sucesso.<br>";
-
-?>
+// A opção B é a mais correta porque, sendo um método estático, não precisa criar um objeto para chamá-lo.
